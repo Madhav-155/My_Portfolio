@@ -300,7 +300,7 @@
                             <span class="btn__icon">👁️</span> Preview Online
                         </button>
                     </div>
-                    <div class="resume__card-meta">Last updated: January 2024 &bull; PDF Format &bull; 1 pages</div>
+                    <div class="resume__card-meta" id="resume-last-updated">Last updated: January 2024 &bull; PDF Format &bull; 1 page</div>
                 </div>
                 <div class="resume__highlights glass">
                     <h4 class="resume__highlights-title">Key Highlights</h4>
@@ -443,5 +443,22 @@
     </noscript>
 
     <script src="app.js" defer></script>
+    <script>
+    // Dynamically update the last updated date for resume.pdf
+    document.addEventListener('DOMContentLoaded', function() {
+        const lastUpdatedElem = document.getElementById('resume-last-updated');
+        if (!lastUpdatedElem) return;
+        fetch('assets/resume.pdf', { method: 'HEAD' })
+            .then(response => {
+                const lastModified = response.headers.get('last-modified');
+                if (lastModified) {
+                    const date = new Date(lastModified);
+                    // Format date as e.g. August 16, 2025
+                    const formatted = date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+                    lastUpdatedElem.innerHTML = `Last updated: ${formatted} &bull; PDF Format &bull; 1 page`;
+                }
+            });
+    });
+    </script>
 </body>
 </html>
