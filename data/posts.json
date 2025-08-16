@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": "modern-css-techniques",
+      "title": "Modern CSS Techniques for Better Performance",
+      "excerpt": "Explore advanced CSS techniques that can significantly improve your website's performance and user experience, including CSS Grid, Flexbox, and custom properties.",
+      "date": "2024-12-01",
+      "contentPath": "./posts/modern-css-techniques.md",
+      "tags": ["CSS", "Performance", "Web Development"],
+      "readTime": "5 min read"
+    },
+    {
+      "id": "javascript-design-patterns",
+      "title": "Essential JavaScript Design Patterns for Modern Development",
+      "excerpt": "A comprehensive guide to JavaScript design patterns that every developer should know, including Module, Observer, and Factory patterns with practical examples.",
+      "date": "2024-11-15",
+      "contentPath": "./posts/javascript-design-patterns.md",
+      "tags": ["JavaScript", "Design Patterns", "Architecture"],
+      "readTime": "8 min read"
+    },
+    {
+      "id": "react-performance-optimization",
+      "title": "React Performance Optimization: Tips and Best Practices",
+      "excerpt": "Learn how to optimize your React applications for better performance using memoization, lazy loading, code splitting, and other advanced techniques.",
+      "date": "2024-10-28",
+      "contentPath": "./posts/react-performance-optimization.md",
+      "tags": ["React", "Performance", "Optimization"],
+      "readTime": "10 min read"
+    },
+    {
+      "id": "building-accessible-web-apps",
+      "title": "Building Accessible Web Applications: A Developer's Guide",
+      "excerpt": "Understanding web accessibility principles and implementing ARIA standards to create inclusive web applications that work for everyone.",
+      "date": "2024-10-10",
+      "contentPath": "./posts/building-accessible-web-apps.md",
+      "tags": ["Accessibility", "ARIA", "Inclusive Design"],
+      "readTime": "7 min read"
+    },
+    {
+      "id": "microservices-with-nodejs",
+      "title": "Building Scalable Microservices with Node.js",
+      "excerpt": "Learn how to architect and build scalable microservices using Node.js, Docker, and modern deployment strategies for enterprise applications.",
+      "date": "2024-09-22",
+      "contentPath": "./posts/microservices-with-nodejs.md",
+      "tags": ["Node.js", "Microservices", "Architecture"],
+      "readTime": "12 min read"
+    }
+  ]
+}

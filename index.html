@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full-Stack Developer Portfolio - Showcasing modern web development projects with cutting-edge technologies">
+    <meta name="keywords" content="full-stack developer, web development, portfolio, JavaScript, React, Node.js">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com">
+    <meta property="og:title" content="Full-Stack Developer Portfolio">
+    <meta property="og:description" content="Innovative web solutions with modern technologies">
+    <meta property="og:image" content="./assets/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:url" content="https://yourportfolio.com">
+    <meta property="twitter:title" content="Full-Stack Developer Portfolio">
+    <meta property="twitter:description" content="Innovative web solutions with modern technologies">
+    <meta property="twitter:image" content="./assets/og-image.jpg">
+    
+    <title>Bojanki Madhav Kumar - Full-Stack Developer</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav__container">
+                <a href="#" class="nav__logo" aria-label="Go to homepage">
+                    <span class="nav__logo-text">Portfolio</span>
+                </a>
+                
+                <button class="nav__toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
+                
+                <ul class="nav__menu" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="#hero" class="nav__link active" role="menuitem">Home</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#about" class="nav__link" role="menuitem">About</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#projects" class="nav__link" role="menuitem">Projects</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#blog" class="nav__link" role="menuitem">Blog</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#resume" class="nav__link" role="menuitem">Resume</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#contact" class="nav__link" role="menuitem">Contact</a>
+                    </li>
+                </ul>
+                
+                <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+                    <span class="theme-toggle__icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" class="main" role="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <div class="hero__background"></div>
+            <div class="hero__container">
+                <div class="hero__content">
+                    <h1 id="hero-title" class="hero__title">
+                        <span class="hero__greeting">Hello, I'm</span>
+                            <span class="hero__name accent-neon">Madhav Bojanki</span>
+                    </h1>
+                    <p class="hero__role">Full-Stack Developer</p>
+                        <p class="hero__tagline">Crafting digital experiences with cutting-edge technology and innovative design solutions.</p>
+                    
+                    <div class="hero__actions">
+                            <a href="#projects" class="btn btn--primary btn--gradient">
+                                View My Work
+                            </a>
+                        <a href="#contact" class="btn btn--secondary">
+                            Get In Touch
+                        </a>
+                    </div>
+                    
+                    <div class="sr-only">
+                        <p id="projects-desc">Navigate to projects section to see my work</p>
+                        <p id="resume-desc">Download my resume as PDF file</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about__content">
+                    <!-- Journey Section -->
+                    <div class="about__journey">
+                        <h2 class="about__journey-title">My Journey</h2>
+                        <div class="about__journey-text">
+                            <p>I'm a passionate full-stack developer with over 5 years of experience creating digital solutions that make a difference. My journey started with curiosity about how websites work and evolved into a deep love for building scalable applications and intuitive user experiences.</p>
+                            
+                            <p>I specialize in modern web technologies and cloud architecture, always staying ahead of the curve with the latest trends and best practices. When I'm not coding, you'll find me contributing to open source projects or exploring new technologies.</p>
+                            
+                            <!-- Tech Stack Tags -->
+                            <div class="about__tech-stack">
+                                <span class="tech-pill">React</span>
+                                <span class="tech-pill">Next.js</span>
+                                <span class="tech-pill">TypeScript</span>
+                                <span class="tech-pill">Node.js</span>
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">Go</span>
+                                <span class="tech-pill">AWS</span>
+                                <span class="tech-pill">Docker</span>
+                                <span class="tech-pill">PostgreSQL</span>
+                                <span class="tech-pill">MongoDB</span>
+                                <span class="tech-pill">GraphQL</span>
+                                <span class="tech-pill">REST APIs</span>
+                                <span class="tech-pill">Tailwind CSS</span>
+                                <span class="tech-pill">Figma</span>
+                                <span class="tech-pill">Git</span>
+                                <span class="tech-pill">CI/CD</span>
+                                <span class="tech-pill">Microservices</span>
+                                <span class="tech-pill">Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Technical Skills Section -->
+                    <div class="about__skills">
+                        <h3 class="about__skills-title">Technical Skills</h3>
+                        <div class="skills-progress">
+                            <div class="skill-progress-item">
+                                <div class="skill-progress-header">
+                                    <span class="skill-name">React/Next.js</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill" data-width="95" style="background: linear-gradient(90deg, #00d4ff, #0099cc);"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-progress-item">
+                                <div class="skill-progress-header">
+                                    <span class="skill-name">TypeScript</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill" data-width="90" style="background: linear-gradient(90deg, #007acc, #0066cc);"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-progress-item">
+                                <div class="skill-progress-header">
+                                    <span class="skill-name">Node.js</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill" data-width="85" style="background: linear-gradient(90deg, #68a063, #4d7c47);"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-progress-item">
+                                <div class="skill-progress-header">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill" data-width="88" style="background: linear-gradient(90deg, #ffd43b, #ff9900);"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-progress-item">
+                                <div class="skill-progress-header">
+                                    <span class="skill-name">AWS/Cloud</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill" data-width="80" style="background: linear-gradient(90deg, #ff9900, #cc0000);"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-progress-item">
+                                <div class="skill-progress-header">
+                                    <span class="skill-name">UI/UX Design</span>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill" data-width="75" style="background: linear-gradient(90deg, #a855f7, #ec4899);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Statistics 
+                        <div class="about__stats">
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            
+                            <div class="stat-item">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Years Exp</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">20+</div>
+                                <div class="stat-label">Happy Clients</div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 id="projects-title" class="section__title">Featured Projects</h2>
+                <div class="projects__grid">
+                    <!-- Project cards will be loaded dynamically by JS -->
+                </div>
+                <!-- Project Modal -->
+                <div id="project-modal" class="modal" aria-hidden="true" tabindex="-1">
+                    <div class="modal__overlay"></div>
+                    <div class="modal__content glass">
+                        <button class="modal__close" aria-label="Close project details">&times;</button>
+                        <h3 class="modal__title"></h3>
+                        <div class="modal__body"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="blog section" aria-labelledby="blog-title">
+            <div class="container">
+                <h2 id="blog-title" class="section__title">Latest Blog Posts</h2>
+                <div class="blog__grid">
+                    <!-- Blog posts will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="resume section" aria-labelledby="resume-title">
+            <div class="container">
+                <h2 id="resume-title" class="section__title">Resume</h2>
+                <p class="resume__desc">Download my detailed resume or preview it online to learn more about my experience and qualifications.</p>
+                <div class="resume__divider"></div>
+                
+                <div class="resume__stats">
+                    <!--resume stats
+                    <div class="resume__stat glass">
+                        <span class="resume__icon">🎁</span>
+                        <span class="resume__stat-value">5+</span>
+                        <span class="resume__stat-label">Years Experience</span>
+                    </div>-->
+                    <div class="resume__stat glass">
+                        <span class="resume__icon">🏅</span>
+                        <span class="resume__stat-value">12+</span>
+                        <span class="resume__stat-label">Certifications</span>
+                    </div>
+                    <!--resume stats
+                    <div class="resume__stat glass">
+                        <span class="resume__icon">🎓</span>
+                        <span class="resume__stat-value">MS</span>
+                        <span class="resume__stat-label">Computer Science</span>
+                    </div> -->
+                    <div class="resume__stat glass">
+                        <span class="resume__icon">📄</span>
+                        <span class="resume__stat-value">50+</span>
+                        <span class="resume__stat-label">Projects Completed</span>
+                    </div>
+                </div>
+                <div class="resume__card glass">
+                    <span class="resume__card-icon">📄</span>
+                    <h3 class="resume__card-title">Bojanki Madhav Kumar - Resume</h3>
+                    <p class="resume__card-desc">Comprehensive overview of my professional experience, technical skills, education, and achievements in full-stack development and software engineering.</p>
+                    <div class="resume__card-actions">
+                        <a href="./assets/Resume.pdf" class="btn btn--primary" download>
+                            <span class="btn__icon">⬇️</span> Download Resume
+                        </a>
+                        <button class="btn btn--secondary" id="resume-preview-btn">
+                            <span class="btn__icon">👁️</span> Preview Online
+                        </button>
+                    </div>
+                    <div class="resume__card-meta">Last updated: January 2024 &bull; PDF Format &bull; 1 pages</div>
+                </div>
+                <div class="resume__highlights glass">
+                    <h4 class="resume__highlights-title">Key Highlights</h4>
+                    <div class="resume__highlights-grid">
+                        <div class="resume__highlight">
+                            <span class="resume__highlight-label accent">Frontend</span>
+                            <span class="resume__highlight-list">React, Tailwind CSS</span>
+                        </div>
+                        <div class="resume__highlight">
+                            <span class="resume__highlight-label accent">Backend</span>
+                            <span class="resume__highlight-list">Node.js, Python, SQL, AWS</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="section__title">Get In Touch</h2>
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <h3 class="contact__subtitle">Let's work together</h3>
+                        <p class="contact__description">
+                            Have a project in mind? I'd love to hear about it. 
+                            Send me a message and let's discuss how we can bring your ideas to life.
+                        </p>
+                        <div class="contact__details">
+                            <a href="mailto:your.email@example.com" class="contact__link">
+                                <span class="contact__icon">📧</span>
+                                madhav.bojanki@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="contact__form" action="https://formspree.io/f/xeoznzka" method="POST">
+                        <div class="form__group">
+                            <label for="name" class="form__label">Name *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                class="form__input" 
+                                required 
+                                aria-describedby="name-error"
+                            >
+                            <div id="name-error" class="form__error" role="alert" aria-live="polite"></div>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form__input" 
+                                required 
+                                aria-describedby="email-error"
+                            >
+                            <div id="email-error" class="form__error" role="alert" aria-live="polite"></div>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="message" class="form__label">Message *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                class="form__textarea" 
+                                rows="5" 
+                                required 
+                                aria-describedby="message-error"
+                            ></textarea>
+                            <div id="message-error" class="form__error" role="alert" aria-live="polite"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full-width">
+                            <span class="btn__text">Send Message</span>
+                            <span class="btn__spinner" aria-hidden="true"></span>
+                        </button>
+                        
+                        <div id="form-status" class="form__status" role="alert" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__nav">
+                    <a href="#hero" class="footer__link">Home</a>
+                    <a href="#about" class="footer__link">About</a>
+                    <a href="#projects" class="footer__link">Projects</a>
+                    <a href="#contact" class="footer__link">Contact</a>
+                </div>
+                <p class="footer__copyright">
+                    © 2025 Bojanki Madhav Kumar. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m18 15-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1"></div>
+        <div class="modal__content">
+            <header class="modal__header">
+                <h3 id="modal-title" class="modal__title"></h3>
+                <button class="modal__close" aria-label="Close modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </header>
+            <div class="modal__body">
+                <!-- Modal content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- No JavaScript Fallback -->
+    <noscript>
+        <div class="noscript">
+            <h2>JavaScript Required</h2>
+            <p>This portfolio requires JavaScript to display dynamic content. Please enable JavaScript in your browser.</p>
+            <p>You can still contact me via email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        </div>
+    </noscript>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+{
+  "projects": [
+    {
+      "id": "ecommerce-platform",
+      "title": "E-Commerce Platform",
+      "description": "Full-stack e-commerce solution with modern UI and secure payment processing",
+      "fullDescription": "A comprehensive e-commerce platform built with React and Node.js, featuring user authentication, product management, shopping cart functionality, and secure payment processing with Stripe integration. The platform includes an admin dashboard for inventory management and order tracking.",
+      "srcset": "./assets/project1-320w.jpg 320w, ./assets/project1-640w.jpg 640w, ./assets/project1-1024w.jpg 1024w",
+      "technologies": ["React", "Node.js", "MongoDB", "Express", "Stripe API", "JWT"],
+      "features": [
+        "User authentication and authorization",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment processing with Stripe",
+        "Admin dashboard for management",
+        "Responsive design for all devices"
+      ],
+      "liveUrl": "https://demo-ecommerce.example.com",
+      "repoUrl": "https://github.com/yourusername/ecommerce-platform",
+      "date": "2024-12-15"
+    },
+    {
+      "id": "task-management-app",
+      "title": "Task Management App",
+      "description": "Collaborative task management tool with real-time updates and team features",
+      "fullDescription": "A sophisticated task management application that enables teams to collaborate effectively. Built with Vue.js and Firebase, it features real-time synchronization, drag-and-drop task organization, team member assignments, and progress tracking with detailed analytics.",
+      "srcset": "./assets/project2-320w.jpg 320w, ./assets/project2-640w.jpg 640w, ./assets/project2-1024w.jpg 1024w",
+      "technologies": ["Vue.js", "Firebase", "Vuex", "CSS3", "PWA"],
+      "features": [
+        "Real-time collaboration",
+        "Drag-and-drop task organization",
+        "Team member assignments",
+        "Progress tracking and analytics",
+        "Offline functionality with PWA",
+        "Mobile-responsive design"
+      ],
+      "liveUrl": "https://task-manager-demo.example.com",
+      "repoUrl": "https://github.com/yourusername/task-management",
+      "date": "2024-11-20"
+    },
+    {
+      "id": "weather-dashboard",
+      "title": "Weather Dashboard",
+      "description": "Interactive weather dashboard with location-based forecasts and data visualization",
+      "fullDescription": "An intuitive weather dashboard that provides comprehensive weather information with beautiful data visualizations. Features include location-based weather data, 7-day forecasts, interactive charts, weather maps, and the ability to save favorite locations for quick access.",
+      "srcset": "./assets/project3-320w.jpg 320w, ./assets/project3-640w.jpg 640w, ./assets/project3-1024w.jpg 1024w",
+      "technologies": ["JavaScript", "Chart.js", "OpenWeather API", "CSS Grid", "Local Storage"],
+      "features": [
+        "Current weather conditions",
+        "7-day weather forecast",
+        "Interactive charts and graphs",
+        "Location-based weather data",
+        "Favorite locations management",
+        "Responsive design with dark/light themes"
+      ],
+      "liveUrl": "https://weather-dashboard-demo.example.com",
+      "repoUrl": "https://github.com/yourusername/weather-dashboard",
+      "date": "2024-10-05"
+    },
+    {
+      "id": "social-media-app",
+      "title": "Social Media Platform",
+      "description": "Modern social networking platform with real-time messaging and content sharing",
+      "fullDescription": "A feature-rich social media platform that connects users through posts, real-time messaging, and community features. Built with React and Socket.io for real-time interactions, it includes user profiles, news feeds, image sharing, and a comprehensive notification system.",
+      "srcset": "./assets/project4-320w.jpg 320w, ./assets/project4-640w.jpg 640w, ./assets/project4-1024w.jpg 1024w",
+      "technologies": ["React", "Socket.io", "PostgreSQL", "Redis", "AWS S3", "Docker"],
+      "features": [
+        "User profiles and authentication",
+        "Real-time messaging system",
+        "News feed with posts and media",
+        "Image and video sharing",
+        "Like, comment, and share functionality",
+        "Push notifications"
+      ],
+      "liveUrl": "https://social-platform-demo.example.com",
+      "repoUrl": "https://github.com/yourusername/social-platform",
+      "date": "2024-09-10"
+    },
+     {
+      "id": "social-media-app",
+      "title": "Social Media Platform",
+      "description": "Modern social networking platform with real-time messaging and content sharing",
+      "fullDescription": "A feature-rich social media platform that connects users through posts, real-time messaging, and community features. Built with React and Socket.io for real-time interactions, it includes user profiles, news feeds, image sharing, and a comprehensive notification system.",
+      "srcset": "./assets/project4-320w.jpg 320w, ./assets/project4-640w.jpg 640w, ./assets/project4-1024w.jpg 1024w",
+      "technologies": ["React", "Socket.io", "PostgreSQL", "Redis", "AWS S3", "Docker"],
+      "features": [
+        "User profiles and authentication",
+        "Real-time messaging system",
+        "News feed with posts and media",
+        "Image and video sharing",
+        "Like, comment, and share functionality",
+        "Push notifications"
+      ],
+      "liveUrl": "https://social-platform-demo.example.com",
+      "repoUrl": "https://github.com/yourusername/social-platform",
+      "date": "2024-09-10"
+    },
+    {
+      "id": "weather-dashboard",
+      "title": "Weather Dashboard",
+      "description": "Interactive weather dashboard with location-based forecasts and data visualization",
+      "fullDescription": "An intuitive weather dashboard that provides comprehensive weather information with beautiful data visualizations. Features include location-based weather data, 7-day forecasts, interactive charts, weather maps, and the ability to save favorite locations for quick access.",
+      "srcset": "./assets/project3-320w.jpg 320w, ./assets/project3-640w.jpg 640w, ./assets/project3-1024w.jpg 1024w",
+      "technologies": ["JavaScript", "Chart.js", "OpenWeather API", "CSS Grid", "Local Storage"],
+      "features": [
+        "Current weather conditions",
+        "7-day weather forecast",
+        "Interactive charts and graphs",
+        "Location-based weather data",
+        "Favorite locations management",
+        "Responsive design with dark/light themes"
+      ],
+      "liveUrl": "https://weather-dashboard-demo.example.com",
+      "repoUrl": "https://github.com/yourusername/weather-dashboard",
+      "date": "2024-10-05"
+    }
+  ]
+}

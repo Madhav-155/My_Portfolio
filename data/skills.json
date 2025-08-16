@@ -1,0 +1,28 @@
+{
+  "skills": [
+    {
+      "name": "JavaScript",
+      "category": "Frontend",
+      "level": 95,
+      "icon": "⚡"
+    },
+    {
+      "name": "React",
+      "category": "Frontend",
+      "level": 90,
+      "icon": "⚛️"
+    },
+    {
+      "name": "Vue.js",
+      "category": "Frontend",
+      "level": 85,
+      "icon": "💚"
+    },
+    {
+      "name": "TypeScript",
+      "category": "Frontend",
+      "level": 88,
+      "icon": "🔷"
+    }
+  ]
+}
