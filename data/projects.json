@@ -1,42 +1,45 @@
 {
   "projects": [
     {
-      "id": "ecommerce-platform",
-      "title": "E-Commerce Platform",
-      "description": "Full-stack e-commerce solution with modern UI and secure payment processing",
-      "fullDescription": "A comprehensive e-commerce platform built with React and Node.js, featuring user authentication, product management, shopping cart functionality, and secure payment processing with Stripe integration. The platform includes an admin dashboard for inventory management and order tracking.",
-      "srcset": "./assets/project1-320w.jpg 320w, ./assets/project1-640w.jpg 640w, ./assets/project1-1024w.jpg 1024w",
-      "technologies": ["React", "Node.js", "MongoDB", "Express", "Stripe API", "JWT"],
+      "id": "NxtWatch-platform",
+      "title": "NxtWatch Platform",
+      "description": "React-based video streaming application that mimics platforms like YouTube",
+      "fullDescription": "Nxt Watch, is a React-based video streaming application that mimics platforms like YouTube. It’s designed to help learners apply key frontend development concepts in a real-world scenario.",
+      "srcset": "./assets/project1-320w.png 320w, ./assets/project1-320w.png 640w, ./assets/project1-320w.png 1024w",
+      "technologies": ["React", "Express", "JWT", "CSS", "HTML"],
       "features": [
-        "User authentication and authorization",
-        "Product catalog with search and filtering",
-        "Shopping cart and checkout process",
-        "Payment processing with Stripe",
-        "Admin dashboard for management",
-        "Responsive design for all devices"
+        "Uses JWT tokens to validate user credentials.",
+        "Fetches video data from backend APIs.",
+        "Manages saved videos, theme toggling (light/dark), and user session.",
+        "Reusable components for headers, sidebars, video cards, and loaders.",
+        "CSS-based styling with responsive design across devices.",
+        "Displays fallback UI for failed API calls."
       ],
       "liveUrl": "https://demo-ecommerce.example.com",
-      "repoUrl": "https://github.com/yourusername/ecommerce-platform",
-      "date": "2024-12-15"
+      "repoUrl": "https://github.com/Madhav-155/NxtWatch",
+      "date": "2025-09-29"
     },
     {
-      "id": "task-management-app",
-      "title": "Task Management App",
-      "description": "Collaborative task management tool with real-time updates and team features",
-      "fullDescription": "A sophisticated task management application that enables teams to collaborate effectively. Built with Vue.js and Firebase, it features real-time synchronization, drag-and-drop task organization, team member assignments, and progress tracking with detailed analytics.",
-      "srcset": "./assets/project2-320w.jpg 320w, ./assets/project2-640w.jpg 640w, ./assets/project2-1024w.jpg 1024w",
-      "technologies": ["Vue.js", "Firebase", "Vuex", "CSS3", "PWA"],
+     
+      "id": "jobby-app",
+      "title": "Jobby App",
+      "description": "Interactive job search platform with authentication and dynamic filtering",
+      "fullDescription": "Jobby App is a responsive job search application built using React.js. It simulates a real-world job portal with secure login authentication, multiple navigable routes, and dynamic job listings fetched from APIs. Users can filter jobs by employment type, salary range, and keyword search. The app includes detailed job views, failure handling for API errors, and a custom 404 page. It’s a comprehensive frontend project that demonstrates routing, protected views, and stateful UI components.",
+      "srcset": "./assets/jobbyapp-320w.jpg 320w, ./assets/jobbyapp-640w.jpg 640w, ./assets/jobbyapp-1024w.jpg 1024w",
+      "technologies": ["React.js", "JWT", "REST API", "CSS3", "React Router"],
       "features": [
-        "Real-time collaboration",
-        "Drag-and-drop task organization",
-        "Team member assignments",
-        "Progress tracking and analytics",
-        "Offline functionality with PWA",
-        "Mobile-responsive design"
+        "Secure login authentication with JWT",
+        "Home and Jobs routes with dynamic listings",
+        "Job details view with similar job suggestions",
+        "Filtering by employment type and salary range",
+        "Keyword-based job search",
+        "Failure views and retry options for API errors",
+        "Responsive design across devices",
+        "Custom 404 Not Found route"
       ],
       "liveUrl": "https://task-manager-demo.example.com",
-      "repoUrl": "https://github.com/yourusername/task-management",
-      "date": "2024-11-20"
+      "repoUrl": "https://github.com/Madhav-155/Jobby-App",
+      "date": "2025-09-20"
     },
     {
       "id": "weather-dashboard",
