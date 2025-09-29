@@ -42,23 +42,27 @@
       "date": "2025-09-20"
     },
     {
-      "id": "weather-dashboard",
-      "title": "Weather Dashboard",
-      "description": "Interactive weather dashboard with location-based forecasts and data visualization",
-      "fullDescription": "An intuitive weather dashboard that provides comprehensive weather information with beautiful data visualizations. Features include location-based weather data, 7-day forecasts, interactive charts, weather maps, and the ability to save favorite locations for quick access.",
-      "srcset": "./assets/project3-320w.jpg 320w, ./assets/project3-640w.jpg 640w, ./assets/project3-1024w.jpg 1024w",
-      "technologies": ["JavaScript", "Chart.js", "OpenWeather API", "CSS Grid", "Local Storage"],
-      "features": [
-        "Current weather conditions",
-        "7-day weather forecast",
-        "Interactive charts and graphs",
-        "Location-based weather data",
-        "Favorite locations management",
-        "Responsive design with dark/light themes"
-      ],
+     
+    "id": "twitter-clone-app",
+    "title": "Twitter Clone App",
+    "description": "Backend-focused social media API with authentication and tweet operations",
+    "fullDescription": "Twitter Clone is a backend application built using Node.js and Express, designed to replicate core functionalities of Twitter. It uses a SQLite database with five interconnected tables: user, follower, tweet, reply, and like. The app supports user registration and login with JWT authentication, and includes protected routes for viewing feeds, followers, tweet details, likes, replies, and tweet creation or deletion. It demonstrates robust API design, middleware for token verification, and secure access control.",
+    "srcset": "./assets/twitterclone-320w.jpg 320w, ./assets/twitterclone-640w.jpg 640w, ./assets/twitterclone-1024w.jpg 1024w",
+    "technologies": ["Node.js", "Express", "SQLite", "JWT", "REST API"],
+    "features": [
+      "User registration and login with JWT authentication",
+      "Protected routes with middleware for token verification",
+      "Tweet feed showing latest posts from followed users",
+      "View followers and following lists",
+      "Detailed tweet view with likes and replies",
+      "Create and delete tweets securely",
+      "Access control for viewing and modifying tweets",
+      "Structured database with normalized relationships"
+    ],
+
       "liveUrl": "https://weather-dashboard-demo.example.com",
-      "repoUrl": "https://github.com/yourusername/weather-dashboard",
-      "date": "2024-10-05"
+      "repoUrl": "https://github.com/Madhav-155/Twitter-Clone-API",
+      "date": "2025-08-20"
     },
     {
       "id": "social-media-app",
@@ -79,25 +83,7 @@
       "repoUrl": "https://github.com/yourusername/social-platform",
       "date": "2024-09-10"
     },
-     {
-      "id": "social-media-app",
-      "title": "Social Media Platform",
-      "description": "Modern social networking platform with real-time messaging and content sharing",
-      "fullDescription": "A feature-rich social media platform that connects users through posts, real-time messaging, and community features. Built with React and Socket.io for real-time interactions, it includes user profiles, news feeds, image sharing, and a comprehensive notification system.",
-      "srcset": "./assets/project4-320w.jpg 320w, ./assets/project4-640w.jpg 640w, ./assets/project4-1024w.jpg 1024w",
-      "technologies": ["React", "Socket.io", "PostgreSQL", "Redis", "AWS S3", "Docker"],
-      "features": [
-        "User profiles and authentication",
-        "Real-time messaging system",
-        "News feed with posts and media",
-        "Image and video sharing",
-        "Like, comment, and share functionality",
-        "Push notifications"
-      ],
-      "liveUrl": "https://social-platform-demo.example.com",
-      "repoUrl": "https://github.com/yourusername/social-platform",
-      "date": "2024-09-10"
-    },
+    
     {
       "id": "weather-dashboard",
       "title": "Weather Dashboard",
