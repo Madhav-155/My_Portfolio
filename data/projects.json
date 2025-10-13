@@ -65,24 +65,24 @@
       "date": "2025-08-20"
     },
     {
-      "id": "social-media-app",
-      "title": "Social Media Platform",
-      "description": "Modern social networking platform with real-time messaging and content sharing",
-      "fullDescription": "A feature-rich social media platform that connects users through posts, real-time messaging, and community features. Built with React and Socket.io for real-time interactions, it includes user profiles, news feeds, image sharing, and a comprehensive notification system.",
-      "srcset": "./assets/project4-320w.jpg 320w, ./assets/project4-640w.jpg 640w, ./assets/project4-1024w.jpg 1024w",
-      "technologies": ["React", "Socket.io", "PostgreSQL", "Redis", "AWS S3", "Docker"],
-      "features": [
-        "User profiles and authentication",
-        "Real-time messaging system",
-        "News feed with posts and media",
-        "Image and video sharing",
-        "Like, comment, and share functionality",
-        "Push notifications"
-      ],
-      "liveUrl": "https://social-platform-demo.example.com",
-      "repoUrl": "https://github.com/yourusername/social-platform",
-      "date": "2024-09-10"
-    },
+"id": "Nxt-Trends",
+ "title": "Nxt Trends",
+  "description": "An e-commerce platform similar to Amazon and Flipkart.",
+  "fullDescription": "Nxt Trendz is a comprehensive e-commerce solution built with React. It features user authentication, product listings, a shopping cart, and a responsive user interface. This project was developed as a part of the Nxt Wave curriculum to demonstrate proficiency in modern front-end technologies.",
+  "srcset": "./assets/project1-320w.png 320w, ./assets/project1-320w.png 640w, ./assets/project1-320w.png 1024w",
+  "technologies": ["React", "JS", "CSS", "HTML", "react-router-dom", "js-cookie"],
+  "features": [
+  "User authentication with login and registration.",
+ "Product browsing with sorting and filtering options.",
+  "Shopping cart functionality to add, remove, and manage items.",
+         "Responsive design for seamless user experience across devices.",
+          "Secure routing to protect application pages.",
+          "Persists user login state using browser cookies."
+ ],
+ "liveUrl": "https://manojtrends.ccbp.tech",
+  "repoUrl": "https://github.com/Madhav-155/Nxt-Trends",
+  "date": "2025-10-12"
+  },   
     
     {
       "id": "weather-dashboard",
