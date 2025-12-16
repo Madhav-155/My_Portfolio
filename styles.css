@@ -1605,6 +1605,7 @@ body {
   position: relative;
   transition: box-shadow var(--transition-normal), transform var(--transition-normal);
 }
+.resume__stat--link { text-decoration: none; color: inherit; display: inline-block; }
 .resume__stat:hover {
   box-shadow: 0 8px 48px var(--glass-shadow), 0 0 32px var(--accent-primary);
   transform: translateY(-4px) scale(1.03);
