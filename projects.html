@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Projects</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark-theme">
+  <header class="header" role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav__container">
+        <a href="index.html#projects" class="nav__logo" aria-label="Back to portfolio">
+          <span class="nav__logo-text">Portfolio</span>
+        </a>
+        <ul class="nav__menu" role="menubar">
+          <li class="nav__item" role="none"><a href="index.html#hero" class="nav__link" role="menuitem">Home</a></li>
+          <li class="nav__item" role="none"><a href="index.html#about" class="nav__link" role="menuitem">About</a></li>
+          <li class="nav__item" role="none"><a href="index.html#experience" class="nav__link" role="menuitem">Experience</a></li>
+          <li class="nav__item" role="none"><a href="index.html#projects" class="nav__link active" role="menuitem">Projects</a></li>
+          <li class="nav__item" role="none"><a href="index.html#resume" class="nav__link" role="menuitem">Resume</a></li>
+          <li class="nav__item" role="none"><a href="index.html#contact" class="nav__link" role="menuitem">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="main main--header-offset" role="main">
+    <section id="projects" class="projects section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title" class="section__title">More Projects</h2>
+        <div class="projects__grid">
+          <!-- Remaining projects will be loaded dynamically based on URL offset -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal reused for details -->
+  <div class="modal" id="project-modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1"></div>
+    <div class="modal__content">
+      <header class="modal__header">
+        <h3 id="modal-title" class="modal__title"></h3>
+        <button class="modal__close" aria-label="Close modal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </header>
+      <div class="modal__body"></div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

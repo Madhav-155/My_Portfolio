@@ -1,0 +1,22 @@
+{
+  "education": [
+    {
+      "degree": "B.Tech in Computer Science",
+      "school": "IIIT Manipur",
+      "period": "2022 — Present",
+      "highlights": [
+        "CGPA: 7.5/10",
+        "Coursework: Algorithms, Web Development, Databases"
+      ]
+    },
+    {
+      "degree": "Higher Secondary",
+      "school": "Narayana Junior College",
+      "period": "2019 — 2021",
+      "highlights": [
+        "Science stream with focus on Mathematics and Physics"
+      ]
+    }
+    
+  ]
+}

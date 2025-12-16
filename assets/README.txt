@@ -17,6 +17,12 @@
    - Use appropriate srcset attributes for responsive images
    - Consider lazy loading for below-the-fold images
    
+
+Profile Photo
+-------------
+- Add your portrait image as `profile.jpg` in this folder.
+- Recommended: square image 800x800+ for crisp rendering.
+- The site styles will crop it to a clean circle beside your name.
    For development purposes, you can use placeholder images from:
    - https://picsum.photos/ (random images)
    - https://via.placeholder.com/ (colored placeholders)

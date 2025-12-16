@@ -18,7 +18,9 @@ const CONFIG = {
   dataFiles: {
     projects: './data/projects.json',
     skills: './data/skills.json',
-    posts: './data/posts.json'
+    posts: './data/posts.json',
+    experience: './data/experience.json',
+    education: './data/education.json'
   },
   animation: {
     observerOptions: {
@@ -47,7 +49,7 @@ const CONFIG = {
  */
 async function loadJSON(path) {
   try {
-    const response = await fetch(path);
+    const response = await fetch(`${path}?v=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) {
       console.warn(`Failed to load ${path}: ${response.status}`);
       return null;
@@ -293,6 +295,32 @@ class NavigationManager {
     }
   }
 }
+// Tabs Controller for Experience/Education
+class ExpEduTabs {
+  constructor() {
+    this.tabExperience = document.getElementById('tab-experience');
+    this.tabEducation = document.getElementById('tab-education');
+    this.panelExperience = document.getElementById('panel-experience');
+    this.panelEducation = document.getElementById('panel-education');
+    this.init();
+  }
+
+  init() {
+    if (!this.tabExperience || !this.tabEducation) return;
+    this.tabExperience.addEventListener('click', () => this.activate('experience'));
+    this.tabEducation.addEventListener('click', () => this.activate('education'));
+  }
+
+  activate(which) {
+    const expActive = which === 'experience';
+    this.tabExperience.classList.toggle('active', expActive);
+    this.tabEducation.classList.toggle('active', !expActive);
+    this.tabExperience.setAttribute('aria-selected', String(expActive));
+    this.tabEducation.setAttribute('aria-selected', String(!expActive));
+    this.panelExperience.classList.toggle('hidden', !expActive);
+    this.panelEducation.classList.toggle('hidden', expActive);
+  }
+}
 
 // ==========================================================================
 // Animation Manager
@@ -489,15 +517,24 @@ class SkillsManager {
   }
 }
 
-// ==========================================================================
+// ========================================================================== 
 // Projects Section
-// ==========================================================================
+// ========================================================================== 
 
 class ProjectsManager {
   constructor() {
     this.projectsGrid = document.querySelector('.projects__grid');
+    this.projectsMore = document.getElementById('projects-more');
+    this.moreBtn = document.getElementById('projects-more-btn');
     this.modal = document.getElementById('project-modal');
+    this.modalContent = this.modal ? this.modal.querySelector('.modal__content') : null;
     this.projects = [];
+    this.INITIAL_COUNT = 6; // 2 rows x 3 columns on large screens
+    this.restProjects = [];
+    // Page context flags (still supported for projects.html)
+    const params = new URLSearchParams(window.location.search);
+    this.offset = parseInt(params.get('offset') || '0', 10) || 0;
+    this.showAll = params.get('showAll') === '1';
     
     this.init();
   }
@@ -515,14 +552,28 @@ class ProjectsManager {
   }
   
   renderProjects() {
-    const projectsFragment = document.createDocumentFragment();
-    
-    this.projects.forEach(project => {
-      const projectCard = this.createProjectCard(project);
-      projectsFragment.appendChild(projectCard);
-    });
-    
-    this.projectsGrid.appendChild(projectsFragment);
+    // Dedicated projects page: render from offset or all
+    if (this.offset > 0 || this.showAll) {
+      const items = this.projects.slice(this.offset);
+      const frag = document.createDocumentFragment();
+      items.forEach(project => frag.appendChild(this.createProjectCard(project)));
+      this.projectsGrid.appendChild(frag);
+      this.moreBtn?.classList.add('is-hidden');
+      return;
+    }
+
+    // Index page: show initial set
+    const initial = this.projects.slice(0, this.INITIAL_COUNT);
+    this.restProjects = this.projects.slice(this.INITIAL_COUNT);
+    const firstFrag = document.createDocumentFragment();
+    initial.forEach(project => firstFrag.appendChild(this.createProjectCard(project)));
+    this.projectsGrid.appendChild(firstFrag);
+
+    // Show More button only if there are more
+    const hasMore = this.restProjects.length > 0;
+    if (!hasMore) {
+      this.moreBtn?.classList.add('is-hidden');
+    }
   }
   
   createProjectCard(project) {
@@ -531,7 +582,7 @@ class ProjectsManager {
     ).join('');
     
     const card = createElement(`
-      <article class="project-card fade-in">
+      <article class="project-card fade-in" data-project-id="${project.id}" tabindex="0" aria-label="View ${project.title} details">
         <div class="project-card__content">
           <h3 class="project-card__title">${project.title}</h3>
           <p class="project-card__description">${project.description}</p>
@@ -567,18 +618,41 @@ class ProjectsManager {
   }
   
   setupEventListeners() {
-    // Project details modal
+    // Project details modal: click anywhere on card except action links
     this.projectsGrid.addEventListener('click', (e) => {
+      const actionLink = e.target.closest('.project-card__actions a');
+      if (actionLink) return; // let Live Demo / Code work normally
+
+      const card = e.target.closest('.project-card');
+      if (card && card.dataset.projectId) {
+        this.openProjectModal(card.dataset.projectId);
+        return;
+      }
+
+      // Fallback: existing Details button behavior
       if (e.target.matches('[data-project-id]') || e.target.closest('[data-project-id]')) {
         const button = e.target.matches('[data-project-id]') ? e.target : e.target.closest('[data-project-id]');
         const projectId = button.dataset.projectId;
         this.openProjectModal(projectId);
       }
     });
+
+    // Keyboard accessibility: Enter on focused card opens details
+    this.projectsGrid.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const card = e.target.closest('.project-card');
+        const actionLinkFocused = e.target.closest('.project-card__actions a');
+        if (card && card.dataset.projectId && !actionLinkFocused) {
+          this.openProjectModal(card.dataset.projectId);
+        }
+      }
+    });
     
-    // Modal close events
+    // Modal close events (overlay click or close button, including icon children)
     this.modal?.addEventListener('click', (e) => {
-      if (e.target.classList.contains('modal__overlay') || e.target.classList.contains('modal__close')) {
+      const isOverlay = e.target.classList.contains('modal__overlay');
+      const isClose = !!(e.target.closest && e.target.closest('.modal__close'));
+      if (isOverlay || isClose) {
         this.closeModal();
       }
     });
@@ -589,6 +663,78 @@ class ProjectsManager {
         this.closeModal();
       }
     });
+
+    // More button opens a modal gallery with remaining projects
+    this.moreBtn?.addEventListener('click', () => {
+      this.openMoreGalleryModal();
+    });
+  }
+
+  openMoreGalleryModal() {
+    if (!this.modal) return;
+    const modalTitle = this.modal.querySelector('.modal__title');
+    const modalBody = this.modal.querySelector('.modal__body');
+    if (!modalTitle || !modalBody) return;
+
+    // Set modal title and prepare gallery container
+    modalTitle.textContent = 'More Projects';
+    modalBody.innerHTML = '';
+    const gallery = document.createElement('div');
+    gallery.className = 'modal__galleryGrid';
+
+    // Ensure restProjects is populated
+    if (this.restProjects.length === 0 && Array.isArray(this.projects) && this.projects.length > this.INITIAL_COUNT) {
+      this.restProjects = this.projects.slice(this.INITIAL_COUNT);
+    }
+
+    const frag = document.createDocumentFragment();
+    this.restProjects.forEach(project => frag.appendChild(this.createProjectCard(project)));
+    gallery.appendChild(frag);
+    modalBody.appendChild(gallery);
+
+    // Ensure cards are visible without waiting for AnimationManager
+    requestAnimationFrame(() => {
+      gallery.querySelectorAll('.project-card, .fade-in').forEach(el => el.classList.add('visible'));
+    });
+
+    // Make modal wider for gallery view
+    this.modalContent?.classList.add('modal__content--wide');
+
+    // Open modal
+    this.modal.classList.add('open');
+    this.modal.setAttribute('aria-hidden', 'false');
+    const closeButton = this.modal.querySelector('.modal__close');
+    closeButton?.focus();
+  }
+
+  createProjectDetailCard(project) {
+    const techs = Array.isArray(project.technologies) ? project.technologies : [];
+    const techTags = techs.map(tech => `<span class="tech-tag">${tech}</span>`).join('');
+    const featureItems = Array.isArray(project.features) ? project.features : [];
+    const featuresList = featureItems.length ? `
+      <div class="project-detail__features">
+        <strong>Key Features:</strong>
+        <ul class="project-detail__features-list">
+          ${featureItems.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+      </div>
+    ` : '';
+    const img = project.thumbnail ? `<img class="project-detail__image" src="${project.thumbnail}" alt="${project.title}">` : '';
+    return createElement(`
+      <article class="project-card project-detail fade-in">
+        ${img}
+        <div class="project-card__content">
+          <h3 class="project-card__title">${project.title}</h3>
+          <p class="project-card__description">${project.fullDescription || project.description}</p>
+          <div class="project-card__tech">${techTags}</div>
+          ${featuresList}
+          <div class="project-card__actions">
+            ${project.liveUrl ? `<a href="${project.liveUrl}" class="project-card__link project-card__link--primary" target="_blank" rel="noopener">Live Demo</a>` : ''}
+            ${project.repoUrl ? `<a href="${project.repoUrl}" class="project-card__link project-card__link--secondary" target="_blank" rel="noopener">Code</a>` : ''}
+          </div>
+        </div>
+      </article>
+    `);
   }
   
   setupLazyLoading() {
@@ -619,20 +765,24 @@ class ProjectsManager {
     const modalBody = this.modal.querySelector('.modal__body');
     
     modalTitle.textContent = project.title;
+    const techs = Array.isArray(project.technologies) ? project.technologies : [];
+    const features = Array.isArray(project.features) ? project.features : [];
+    const imgHTML = project.thumbnail ? `<img src="${project.thumbnail}" alt="${project.title}" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">` : '';
     modalBody.innerHTML = `
-      <img src="${project.thumbnail}" alt="${project.title}" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+      ${imgHTML}
       <p style="margin-bottom: 1rem; line-height: 1.6;">${project.fullDescription || project.description}</p>
-      <div style="margin-bottom: 1rem;">
+      ${techs.length ? `
+      <div style=\"margin-bottom: 1rem;\">
         <strong>Technologies:</strong>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-          ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+        <div style=\"display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;\">
+          ${techs.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
         </div>
-      </div>
-      ${project.features ? `
-        <div style="margin-bottom: 1rem;">
+      </div>` : ''}
+      ${features.length ? `
+        <div style=\"margin-bottom: 1rem;\">
           <strong>Key Features:</strong>
-          <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-            ${project.features.map(feature => `<li style="margin-bottom: 0.25rem;">${feature}</li>`).join('')}
+          <ul style=\"margin-top: 0.5rem; padding-left: 1.5rem;\">
+            ${features.map(feature => `<li style="margin-bottom: 0.25rem;">${feature}</li>`).join('')}
           </ul>
         </div>
       ` : ''}
@@ -651,8 +801,13 @@ class ProjectsManager {
   }
   
   closeModal() {
-    this.modal?.classList.remove('open');
-    this.modal?.setAttribute('aria-hidden', 'true');
+    if (!this.modal) return;
+    this.modal.classList.remove('open');
+    this.modal.setAttribute('aria-hidden', 'true');
+    const modalBody = this.modal.querySelector('.modal__body');
+    if (modalBody) modalBody.innerHTML = '';
+    // Remove wide mode if applied for gallery
+    this.modalContent?.classList.remove('modal__content--wide');
   }
   
   renderEmptyState() {
@@ -762,6 +917,112 @@ class BlogManager {
     this.blogGrid.innerHTML = `
       <div class="empty-state">
         <p>Blog posts not available. Please check data/posts.json</p>
+      </div>
+    `;
+  }
+}
+
+// ==========================================================================
+// Experience Section
+// ==========================================================================
+
+class ExperienceManager {
+  constructor() {
+    this.timeline = document.querySelector('.experience__timeline');
+    this.experiences = [];
+    this.init();
+  }
+
+  async init() {
+    if (!this.timeline) return;
+    const expData = await loadJSON(CONFIG.dataFiles.experience);
+    if (expData && Array.isArray(expData.experience)) {
+      this.experiences = expData.experience;
+      this.renderExperience();
+    } else {
+      this.renderEmptyState();
+    }
+  }
+
+  renderExperience() {
+    this.timeline.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+    this.experiences.forEach(item => {
+      const tags = (item.highlights || []).map(h => `<li>${h}</li>`).join('');
+      const card = createElement(`
+        <div class="experience__item glass fade-in">
+          <div class="experience__item-header">
+            <h3 class="experience__role">${item.role}</h3>
+            <span class="experience__company">${item.company}</span>
+            <span class="experience__duration">${item.period}</span>
+          </div>
+          <ul class="experience__highlights">
+            ${tags}
+          </ul>
+        </div>
+      `);
+      fragment.appendChild(card);
+    });
+    this.timeline.appendChild(fragment);
+  }
+
+  renderEmptyState() {
+    this.timeline.innerHTML = `
+      <div class="empty-state">
+        <p>Experience data not available. Please check data/experience.json</p>
+      </div>
+    `;
+  }
+}
+
+// ==========================================================================
+// Education Section
+// ==========================================================================
+
+class EducationManager {
+  constructor() {
+    this.timeline = document.querySelector('.education__timeline');
+    this.education = [];
+    this.init();
+  }
+
+  async init() {
+    if (!this.timeline) return;
+    const eduData = await loadJSON(CONFIG.dataFiles.education);
+    if (eduData && Array.isArray(eduData.education)) {
+      this.education = eduData.education;
+      this.renderEducation();
+    } else {
+      this.renderEmptyState();
+    }
+  }
+
+  renderEducation() {
+    this.timeline.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+    this.education.forEach(item => {
+      const highlights = (item.highlights || []).map(h => `<li>${h}</li>`).join('');
+      const card = createElement(`
+        <div class="education__item glass fade-in">
+          <div class="education__item-header">
+            <h3 class="education__degree">${item.degree}</h3>
+            <span class="education__school">${item.school}</span>
+            <span class="education__duration">${item.period}</span>
+          </div>
+          <ul class="education__highlights">
+            ${highlights}
+          </ul>
+        </div>
+      `);
+      fragment.appendChild(card);
+    });
+    this.timeline.appendChild(fragment);
+  }
+
+  renderEmptyState() {
+    this.timeline.innerHTML = `
+      <div class="empty-state">
+        <p>Education data not available. Please check data/education.json</p>
       </div>
     `;
   }
@@ -1136,9 +1397,12 @@ class PortfolioApp {
       this.components.navigation = new NavigationManager();
       this.components.animation = new AnimationManager();
       this.components.about = new AboutManager();
+      this.components.experience = new ExperienceManager();
+      this.components.education = new EducationManager();
       this.components.skills = new SkillsManager();
       this.components.projects = new ProjectsManager();
       this.components.blog = new BlogManager();
+      this.components.tabs = new ExpEduTabs();
       this.components.contact = new ContactForm();
       this.components.scrollToTop = new ScrollToTop();
       this.components.keyboard = new KeyboardShortcuts();

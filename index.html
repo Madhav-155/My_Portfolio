@@ -53,6 +53,9 @@
                         <a href="#about" class="nav__link" role="menuitem">About</a>
                     </li>
                     <li class="nav__item" role="none">
+                        <a href="#experience" class="nav__link" role="menuitem">Experience</a>
+                    </li>
+                    <li class="nav__item" role="none">
                         <a href="#projects" class="nav__link" role="menuitem">Projects</a>
                     </li>
                     <!-- <li class="nav__item" role="none">
@@ -79,6 +82,7 @@
         <section id="hero" class="hero" aria-labelledby="hero-title">
             <div class="hero__background"></div>
             <div class="hero__container">
+                <div class="hero__grid">
                 <div class="hero__content">
                     <h1 id="hero-title" class="hero__title">
                         <span class="hero__greeting">Hello, I'm</span>
@@ -101,8 +105,16 @@
                         <p id="resume-desc">Download my resume as PDF file</p>
                     </div>
                 </div>
+                <aside class="hero__photo" aria-label="Profile photo">
+                    <div class="hero__avatar-wrap">
+                        <img src="./assets/profile.jpg" alt="Portrait of Bojanki Madhav Kumar" class="hero__avatar" loading="eager">
+                    </div>
+                </aside>
+                </div>
             </div>
         </section>
+
+        
 
         <!-- About Section -->
         <section id="about" class="about section" aria-labelledby="about-title">
@@ -131,7 +143,7 @@
                                <!--<span class="tech-pill">GraphQL</span>--> 
                                 <span class="tech-pill">REST APIs</span>
                                 <span class="tech-pill">Tailwind CSS</span>
-                                <span class="tech-pill">Figma</span>
+                                <span class="tech-pill">MySQL</span>
                                 <span class="tech-pill">Git</span>
                                 <span class="tech-pill">CI/CD</span>
                                <!--<span class="tech-pill">Microservices</span>--> 
@@ -146,11 +158,11 @@
                         <div class="skills-progress">
                             <div class="skill-progress-item">
                                 <div class="skill-progress-header">
-                                    <span class="skill-name">React/Next.js</span>
+                                    <span class="skill-name">ReactJS</span>
                                     <span class="skill-percentage">95%</span>
                                 </div>
                                 <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill" data-width="95" style="background: linear-gradient(90deg, #00d4ff, #0099cc);"></div>
+                                    <div class="skill-progress-fill fill--react" data-width="95"></div>
                                 </div>
                             </div>
                             <!--<div class="skill-progress-item">
@@ -167,10 +179,10 @@
                             <div class="skill-progress-item">
                                 <div class="skill-progress-header">
                                     <span class="skill-name">Node.js</span>
-                                    <span class="skill-percentage">85%</span>
+                                    <span class="skill-percentage">90%</span>
                                 </div>
                                 <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill" data-width="85" style="background: linear-gradient(90deg, #68a063, #4d7c47);"></div>
+                                    <div class="skill-progress-fill fill--node" data-width="90"></div>
                                 </div>
                             </div>
                             
@@ -180,7 +192,7 @@
                                     <span class="skill-percentage">88%</span>
                                 </div>
                                 <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill" data-width="88" style="background: linear-gradient(90deg, #ffd43b, #ff9900);"></div>
+                                    <div class="skill-progress-fill fill--python" data-width="88"></div>
                                 </div>
                             </div>
                             
@@ -190,18 +202,18 @@
                                     <span class="skill-percentage">70%</span>
                                 </div>
                                 <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill" data-width="80" style="background: linear-gradient(90deg, #ff9900, #cc0000);"></div>
+                                    <div class="skill-progress-fill fill--aws" data-width="80"></div>
                                 </div>
                             </div>
-                            <!-- <div class="skill-progress-item">
+                             <div class="skill-progress-item">
                                 <div class="skill-progress-header">
-                                    <span class="skill-name">UI/UX Design</span>
-                                    <span class="skill-percentage">75%</span>
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-percentage">95%</span>
                                 </div>
                                 <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill" data-width="75" style="background: linear-gradient(90deg, #a855f7, #ec4899);"></div>
+                                    <div class="skill-progress-fill fill--mysql" data-width="95"></div>
                                 </div>
-                            </div>-->
+                            </div>
                            
                         </div>
                         
@@ -226,23 +238,42 @@
             </div>
         </section>
 
+        <!-- Experience Section with Tabs -->
+        <section id="experience" class="experience section" aria-labelledby="experience-title">
+            <div class="container">
+                <h2 id="experience-title" class="section__title">Experience</h2>
+                <div class="expedu-tabs" role="tablist" aria-label="Experience and Education">
+                    <button class="expedu-tab active" role="tab" aria-selected="true" aria-controls="panel-experience" id="tab-experience">Experience</button>
+                    <button class="expedu-tab" role="tab" aria-selected="false" aria-controls="panel-education" id="tab-education">Education</button>
+                </div>
+                <div class="expedu-panels">
+                    <div id="panel-experience" class="expedu-panel" role="tabpanel" aria-labelledby="tab-experience">
+                        <div class="experience__content">
+                            <div class="experience__timeline"></div>
+                        </div>
+                    </div>
+                    <div id="panel-education" class="expedu-panel hidden" role="tabpanel" aria-labelledby="tab-education">
+                        <div class="education__content">
+                            <div class="education__timeline"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         
 
         <!-- Projects Section -->
         <section id="projects" class="projects section" aria-labelledby="projects-title">
             <div class="container">
                 <h2 id="projects-title" class="section__title">Featured Projects</h2>
+                <!-- Expanded space appears above the original grid -->
+                <div id="projects-more" class="projects__more is-hidden" aria-live="polite" aria-label="More projects"></div>
                 <div class="projects__grid">
                     <!-- Project cards will be loaded dynamically by JS -->
                 </div>
-                <!-- Project Modal -->
-                <div id="project-modal" class="modal" aria-hidden="true" tabindex="-1">
-                    <div class="modal__overlay"></div>
-                    <div class="modal__content glass">
-                        <button class="modal__close" aria-label="Close project details">&times;</button>
-                        <h3 class="modal__title"></h3>
-                        <div class="modal__body"></div>
-                    </div>
+                <div class="projects__actions">
+                    <button id="projects-more-btn" class="btn btn--secondary">More</button>
                 </div>
             </div>
         </section>
@@ -413,6 +444,7 @@
                 <div class="footer__nav">
                     <a href="#hero" class="footer__link">Home</a>
                     <a href="#about" class="footer__link">About</a>
+                    <a href="#experience" class="footer__link">Experience</a>
                     <a href="#projects" class="footer__link">Projects</a>
                     <a href="#contact" class="footer__link">Contact</a>
                 </div>

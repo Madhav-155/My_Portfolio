@@ -1,0 +1,24 @@
+{
+  "experience": [
+    {
+      "role": "Data Science Intern",
+      "company": "Celebal Technologies",
+      "period": "May 2025 - July 2025",
+      "highlights": [
+        "Conducted in-depth Exploratory Data Analysis (EDA) using Pandas, Seaborn, and Matplotlib.",
+        "Created a full classification pipeline by training and evaluating machine learning models.",
+        "Optimized the best model (KNN at 98.2 accuracy) by implementing RandomizedSearchCV"
+      ]
+    },
+    {
+      "role": "Cyber Security Trainee",
+      "company": "C-DAC",
+      "period": "Nov 2024 - Dec 2024",
+      "highlights": [
+        "Ethical Hacking and Penetration Testing Training",
+        "Learned various web vulnerabilities and their prevention techniques",
+        "Gained hands-on experience with tools like Wireshark, Nmap"
+      ]
+    }
+  ]
+}
