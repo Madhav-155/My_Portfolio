@@ -23,6 +23,12 @@
       "category": "Database",
       "level": 95,
       "icon": "🔷"
+    },
+    {
+      "name": "MongoDB",
+      "category": "Database",
+      "level": 95,
+      "icon": "🔷"
     }
   ]
 }
