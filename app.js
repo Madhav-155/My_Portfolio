@@ -1272,8 +1272,7 @@ class AboutManager {
   createSkillProgressItem(skill) {
     const name = skill.name || 'Skill';
     const level = Number(skill.level ?? 0);
-    const fillClass = this.getFillClass(name, skill.category);
-    const inlineBg = fillClass === 'fill--default' ? 'style="background: var(--accent-gradient);"' : '';
+    const gradient = this.getRandomGradient();
 
     return `
       <div class="skill-progress-item">
@@ -1282,7 +1281,7 @@ class AboutManager {
           <span class="skill-percentage">${level}%</span>
         </div>
         <div class="skill-progress-bar">
-          <div class="skill-progress-fill ${fillClass}" data-width="${level}" ${inlineBg}></div>
+          <div class="skill-progress-fill" data-width="${level}" style="background: ${gradient};"></div>
         </div>
       </div>
     `;
@@ -1309,6 +1308,23 @@ class AboutManager {
     if (cat.includes('database')) return 'fill--mysql';
     if (cat.includes('cloud')) return 'fill--aws';
     return 'fill--default';
+  }
+
+  getRandomGradient() {
+    const palette = [
+      'linear-gradient(90deg, #00d4ff, #0099cc)',
+      'linear-gradient(90deg, #68a063, #4d7c47)',
+      'linear-gradient(90deg, #ffd43b, #ff9900)',
+      'linear-gradient(90deg, #ff6464, #d7263d)',
+      'linear-gradient(90deg, #a855f7, #ec4899)',
+      'linear-gradient(90deg, #10b981, #059669)',
+      'linear-gradient(90deg, #06b6d4, #3b82f6)',
+      'linear-gradient(90deg, #f59e0b, #ef4444)',
+      'linear-gradient(90deg, #22c55e, #84cc16)',
+      'linear-gradient(90deg, #14b8a6, #06b6d4)'
+    ];
+    const idx = Math.floor(Math.random() * palette.length);
+    return palette[idx];
   }
 
   escapeHTML(str) {

@@ -9,15 +9,21 @@
     {
       "name": "React",
       "category": "Frontend",
-      "level": 90,
+      "level": 95,
       "icon": "⚛️"
     },
     {
-      "name": "Vue.js",
-      "category": "Frontend",
-      "level": 85,
+      "name": "Node.js",
+      "category": "Backend",
+      "level": 95,
       "icon": "💚"
     },
+    {
+      "name": "Express.js",
+      "category": "Backend",
+      "level": 95,
+      "icon": "☁️"
+    },   
     {
       "name": "MySQL",
       "category": "Database",
