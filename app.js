@@ -385,6 +385,10 @@ class SkillsManager {
   }
   
   async init() {
+    // If required containers are not on the page, skip initializing
+    if (!this.skillsGrid || !this.filterContainer) {
+      return;
+    }
     const skillsData = await loadJSON(CONFIG.dataFiles.skills);
     if (skillsData && skillsData.skills) {
       this.skills = skillsData.skills;
@@ -1209,15 +1213,22 @@ class ContactForm {
 
 class AboutManager {
   constructor() {
-    this.progressBars = document.querySelectorAll('.about__skills .skill-progress-fill');
+    this.progressBars = [];
     this.aboutSection = document.getElementById('about');
+    this.aboutSkillsContainer = document.getElementById('about-skills');
     this.animated = false;
     
     this.init();
   }
   
-  init() {
+  async init() {
     if (!this.aboutSection) return;
+    // Render skills list dynamically if container exists
+    if (this.aboutSkillsContainer) {
+      await this.renderSkillsFromJSON();
+    }
+    // Refresh progress bar references after potential render
+    this.progressBars = document.querySelectorAll('.about__skills .skill-progress-fill');
     this.setupIntersectionObserver();
   }
   
@@ -1244,6 +1255,69 @@ class AboutManager {
         bar.style.width = `${width}%`;
       }, index * 200);
     });
+  }
+
+  async renderSkillsFromJSON() {
+    try {
+      const skillsData = await loadJSON(CONFIG.dataFiles.skills);
+      if (!skillsData || !Array.isArray(skillsData.skills)) return;
+
+      const items = skillsData.skills.map((skill) => this.createSkillProgressItem(skill)).join('');
+      this.aboutSkillsContainer.innerHTML = items;
+    } catch (e) {
+      console.warn('Failed to render About skills from JSON:', e);
+    }
+  }
+
+  createSkillProgressItem(skill) {
+    const name = skill.name || 'Skill';
+    const level = Number(skill.level ?? 0);
+    const fillClass = this.getFillClass(name, skill.category);
+    const inlineBg = fillClass === 'fill--default' ? 'style="background: var(--accent-gradient);"' : '';
+
+    return `
+      <div class="skill-progress-item">
+        <div class="skill-progress-header">
+          <span class="skill-name">${this.escapeHTML(name)}</span>
+          <span class="skill-percentage">${level}%</span>
+        </div>
+        <div class="skill-progress-bar">
+          <div class="skill-progress-fill ${fillClass}" data-width="${level}" ${inlineBg}></div>
+        </div>
+      </div>
+    `;
+  }
+
+  getFillClass(name, category) {
+    const key = (name || '').toLowerCase().replace(/[^a-z0-9]+/g, '');
+    const cat = (category || '').toLowerCase();
+    const map = {
+      react: 'fill--react',
+      reactjs: 'fill--react',
+      node: 'fill--node',
+      nodejs: 'fill--node',
+      python: 'fill--python',
+      aws: 'fill--aws',
+      cloud: 'fill--aws',
+      awscloud: 'fill--aws',
+      mysql: 'fill--mysql',
+      mongodb: 'fill--mongodb'
+    };
+    if (map[key]) return map[key];
+    if (cat.includes('frontend')) return 'fill--react';
+    if (cat.includes('backend')) return 'fill--node';
+    if (cat.includes('database')) return 'fill--mysql';
+    if (cat.includes('cloud')) return 'fill--aws';
+    return 'fill--default';
+  }
+
+  escapeHTML(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
   }
 }
 

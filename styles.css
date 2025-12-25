@@ -419,6 +419,8 @@ body {
   .hero__grid { grid-template-columns: 1.15fr 0.85fr; }
   .hero__content { margin: 0; text-align: left; }
   .hero__actions { justify-content: flex-start; }
+  /* Align caption/tagline with left content on desktop */
+  .hero__tagline { margin-left: 0; margin-right: 0; }
 }
 
 /* ==========================================================================
@@ -603,6 +605,8 @@ body {
 .skill-progress-fill.fill--python { background: linear-gradient(90deg, #ffd43b, #ff9900); }
 .skill-progress-fill.fill--aws { background: linear-gradient(90deg, #ff9900, #cc0000); }
 .skill-progress-fill.fill--mysql { background: linear-gradient(90deg, #a855f7, #ec4899); }
+.skill-progress-fill.fill--mongodb { background: linear-gradient(90deg, #10b981, #059669); }
+.skill-progress-fill.fill--default { background: var(--accent-gradient); }
 
 .skill-progress-fill::after {
   content: '';
