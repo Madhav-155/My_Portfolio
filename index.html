@@ -155,66 +155,12 @@
                     <!-- Technical Skills Section -->
                     <div class="about__skills">
                         <h3 class="about__skills-title">Technical Skills</h3>
-                        <div class="skills-progress">
-                            <div class="skill-progress-item">
-                                <div class="skill-progress-header">
-                                    <span class="skill-name">ReactJS</span>
-                                    <span class="skill-percentage">95%</span>
-                                </div>
-                                <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill fill--react" data-width="95"></div>
-                                </div>
-                            </div>
-                            <!--<div class="skill-progress-item">
-                                <div class="skill-progress-header">
-                                    <span class="skill-name">TypeScript</span>
-                                    <span class="skill-percentage">90%</span>
-                                </div>
-                                <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill" data-width="90" style="background: linear-gradient(90deg, #007acc, #0066cc);"></div>
-                                </div>
-                            </div>-->
-                            
-                            
-                            <div class="skill-progress-item">
-                                <div class="skill-progress-header">
-                                    <span class="skill-name">Node.js</span>
-                                    <span class="skill-percentage">90%</span>
-                                </div>
-                                <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill fill--node" data-width="90"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-progress-item">
-                                <div class="skill-progress-header">
-                                    <span class="skill-name">Python</span>
-                                    <span class="skill-percentage">88%</span>
-                                </div>
-                                <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill fill--python" data-width="88"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-progress-item">
-                                <div class="skill-progress-header">
-                                    <span class="skill-name">AWS/Cloud</span>
-                                    <span class="skill-percentage">70%</span>
-                                </div>
-                                <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill fill--aws" data-width="80"></div>
-                                </div>
-                            </div>
-                             <div class="skill-progress-item">
-                                <div class="skill-progress-header">
-                                    <span class="skill-name">MySQL</span>
-                                    <span class="skill-percentage">95%</span>
-                                </div>
-                                <div class="skill-progress-bar">
-                                    <div class="skill-progress-fill fill--mysql" data-width="95"></div>
-                                </div>
-                            </div>
-                           
+                        <!-- Dynamic skills from data/skills.json -->
+                        <div class="skills__filter" role="tablist" aria-label="Filter skills by category">
+                            <button class="skills__filter-btn active" role="tab" aria-selected="true" data-filter="all">All</button>
+                        </div>
+                        <div class="skills__grid" aria-live="polite" aria-label="Skills grid">
+                            <!-- Skills will be loaded dynamically -->
                         </div>
                         
                         <!-- Statistics 
