@@ -1,6 +1,17 @@
 {
   "experience": [
     {
+  "role": "Winter Intern",
+  "company": "NPTEL - DLED Labs",
+  "period": "Dec 2025 - Jan 2026",
+  "highlights": [
+    "Co-designed a personalized recommendation system using MERN stack and AI-driven collaborative filtering for 500+ students.",
+    "Improved DSA mastery via adaptive learning paths, achieving faster concept comprehension rate.",
+    "Developed AI-powered graph-based visualization module with K-means clustering for enhanced user engagement.",
+    "Integrated NLP for content analysis, enhancing topic relationships and optimizing learning path recommendations."
+  ]},
+
+    {
       "role": "Data Science Intern",
       "company": "Celebal Technologies",
       "period": "May 2025 - July 2025",
