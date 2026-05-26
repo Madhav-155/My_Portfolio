@@ -1,6 +1,30 @@
 {
   "skills": [
     {
+      "name": "Python",
+      "category": "AI",
+      "level": 95,
+      "icon": "🐍"
+    },
+    {
+      "name": "Machine Learning",
+      "category": "AI",
+      "level": 90,
+      "icon": "🤖"
+    },
+    {
+      "name": "Deep Learning & NLP",
+      "category": "AI",
+      "level": 85,
+      "icon": "🧠"
+    },
+    {
+      "name": "LangChain & LLMs",
+      "category": "AI",
+      "level": 85,
+      "icon": "⛓️"
+    },
+    {
       "name": "JavaScript",
       "category": "Frontend",
       "level": 95,
