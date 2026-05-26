@@ -1,6 +1,44 @@
 {
   "projects": [
     {
+      "id": "multi-modal-rag",
+      "title": "Multi-Modal RAG Pipeline",
+      "description": "An end-to-end multi-modal RAG pipeline performing information extraction from complex PDFs using GPT-4o, ChromaDB, and OCR.",
+      "fullDescription": "Built an end-to-end multi-modal RAG pipeline that performs information extraction from complex PDFs (including text, tables, and images) using Unstructured.io with OCR, processing 100+ elements per document and reducing 70% of manual review time. Features title-based chunking with configurable thresholds and generated AI-powered summaries for non-text content using GPT-4o vision to improve retrieval accuracy. Stored enriched documents in ChromaDB vector database with OpenAI embeddings and cosine similarity to achieve sub-second semantic retrieval across the full corpus. The multimodal answer generation layer passes retrieved text, table HTML, and base64 images to GPT-4o, delivering accurate responses grounded in visual and tabular data.",
+      "thumbnail": "./assets/project_rag.png",
+      "srcset": "./assets/project_rag.png 320w, ./assets/project_rag.png 640w, ./assets/project_rag.png 1024w",
+      "technologies": ["Python", "LangChain", "OpenAI GPT-4o", "ChromaDB", "Unstructured.io", "Tesseract OCR"],
+      "features": [
+        "Performs text, table, and image extraction from complex PDFs.",
+        "Title-based chunking with configurable thresholds.",
+        "AI-powered summaries for non-text content using GPT-4o vision.",
+        "High-performance storage in ChromaDB vector database.",
+        "OpenAI embeddings and cosine similarity for semantic retrieval.",
+        "Answers grounded in both visual and tabular data."
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Madhav-155/Multi-Modal-RAG",
+      "date": "2026-03-15"
+    },
+    {
+      "id": "movie-recommendation-analytics",
+      "title": "Movie Recommendation Analytics",
+      "description": "Recommendation system using collaborative and content-based filtering with an interactive Streamlit analytics dashboard.",
+      "fullDescription": "Built a comprehensive movie recommendation analytics system using collaborative and content-based filtering models, improving recommendation accuracy by 25%. Analyzed user interaction data to uncover behavioral patterns and optimize recommendation strategies, while optimizing data pipelines to reduce overall processing time by 40%. Delivered an interactive dashboard using Streamlit for intuitive exploration and data insights.",
+      "thumbnail": "./assets/project_movie.png",
+      "srcset": "./assets/project_movie.png 320w, ./assets/project_movie.png 640w, ./assets/project_movie.png 1024w",
+      "technologies": ["Python", "Pandas", "Streamlit", "Collaborative Filtering", "Scikit-Learn"],
+      "features": [
+        "Collaborative and content-based filtering recommendation models.",
+        "User behavioral pattern analysis.",
+        "High-performance optimized data pipelines.",
+        "Streamlit-based interactive analytics dashboard."
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Madhav-155/Movie-Recommendation-System",
+      "date": "2025-11-20"
+    },
+    {
       "id": "NxtWatch-platform",
       "title": "NxtWatch Platform",
       "description": "React-based video streaming application that mimics platforms like YouTube",

@@ -1,22 +1,22 @@
 {
   "education": [
     {
-      "degree": "B.Tech in Computer Science",
-      "school": "IIIT Manipur",
+      "degree": "Bachelor of Technology in Computer Science",
+      "school": "Indian Institute of Information Technology, Manipur",
       "period": "2022 — Present",
       "highlights": [
-        "CGPA: 7.5/10",
-        "Coursework: Algorithms, Web Development, Databases"
+        "CGPA: 7.53/10",
+        "Key focus areas: Algorithms, Web Development, Databases, AI and Data Science"
       ]
     },
     {
-      "degree": "Higher Secondary",
-      "school": "Narayana Junior College",
+      "degree": "Higher Secondary Education",
+      "school": "Narayana Junior College, Hyderabad",
       "period": "2019 — 2021",
       "highlights": [
+        "Percentage: 94.8%",
         "Science stream with focus on Mathematics and Physics"
       ]
     }
-    
   ]
 }

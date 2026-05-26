@@ -2,63 +2,105 @@
   "skills": [
     {
       "name": "Python",
-      "category": "AI",
+      "category": "Programming",
       "level": 95,
       "icon": "🐍"
     },
     {
+      "name": "JavaScript",
+      "category": "Programming",
+      "level": 90,
+      "icon": "⚡"
+    },
+    {
+      "name": "C/C++",
+      "category": "Programming",
+      "level": 85,
+      "icon": "🔷"
+    },
+    {
       "name": "Machine Learning",
-      "category": "AI",
+      "category": "AI & ML",
       "level": 90,
       "icon": "🤖"
     },
     {
-      "name": "Deep Learning & NLP",
-      "category": "AI",
-      "level": 85,
+      "name": "Generative AI & RAG",
+      "category": "AI & ML",
+      "level": 95,
       "icon": "🧠"
     },
     {
-      "name": "LangChain & LLMs",
-      "category": "AI",
-      "level": 85,
+      "name": "Agentic Workflows & NLP",
+      "category": "AI & ML",
+      "level": 90,
       "icon": "⛓️"
     },
     {
-      "name": "JavaScript",
-      "category": "Frontend",
+      "name": "LLM Integration (OpenAI, Claude)",
+      "category": "AI & ML",
       "level": 95,
+      "icon": "☁️"
+    },
+    {
+      "name": "FastAPI",
+      "category": "Frameworks",
+      "level": 90,
       "icon": "⚡"
     },
     {
       "name": "React",
-      "category": "Frontend",
+      "category": "Frameworks",
       "level": 95,
       "icon": "⚛️"
     },
     {
       "name": "Node.js",
-      "category": "Backend",
-      "level": 95,
+      "category": "Frameworks",
+      "level": 90,
       "icon": "💚"
     },
     {
-      "name": "Express.js",
-      "category": "Backend",
-      "level": 95,
-      "icon": "☁️"
-    },   
+      "name": "LangChain & LangGraph",
+      "category": "Frameworks",
+      "level": 90,
+      "icon": "🦜"
+    },
     {
-      "name": "MySQL",
-      "category": "Database",
-      "level": 95,
+      "name": "Streamlit",
+      "category": "Frameworks",
+      "level": 85,
+      "icon": "📊"
+    },
+    {
+      "name": "PostgreSQL & MySQL",
+      "category": "Databases",
+      "level": 90,
       "icon": "🔷"
     },
     {
+      "name": "ChromaDB & Redis",
+      "category": "Databases",
+      "level": 90,
+      "icon": "🟥"
+    },
+    {
       "name": "MongoDB",
-      "category": "Database",
+      "category": "Databases",
+      "level": 90,
+      "icon": "🍃"
+    },
+    {
+      "name": "Git",
+      "category": "Tools",
       "level": 95,
-      "icon": "🔷"
+      "icon": "🐙"
+    },
+    {
+      "name": "Unstructured.io & Tesseract",
+      "category": "Tools",
+      "level": 85,
+      "icon": "📝"
     }
   ]
 }

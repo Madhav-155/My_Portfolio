@@ -1922,3 +1922,75 @@ body {
 .education__duration { margin-left: auto; color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.95rem; }
 .education__highlights { display: grid; gap: var(--space-xs); padding-left: 1.25rem; }
 .education__highlights li { color: var(--text-secondary); line-height: 1.7; }
+
+/* ==========================================================================
+   Achievements & Certifications Layout
+   ========================================================================== */
+
+.resume__additional-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.resume__cert-achieve {
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+  box-shadow: 0 4px 32px var(--glass-shadow), 0 0 16px var(--accent-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.resume__sub-card {
+  width: 100%;
+}
+
+.resume__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.resume__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.resume__list li strong {
+  color: var(--text-primary);
+}
+
+.list-icon {
+  font-size: 1.25rem;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.list-text {
+  flex-grow: 1;
+}
+
+.list-date {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  float: right;
+  margin-left: var(--space-sm);
+}
+
+@media (max-width: 900px) {
+  .resume__additional-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}

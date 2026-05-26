@@ -1,34 +1,42 @@
 {
   "experience": [
     {
-  "role": "Winter Intern",
-  "company": "NPTEL - DLED Labs",
-  "period": "Dec 2025 - Jan 2026",
-  "highlights": [
-    "Co-designed a personalized recommendation system using MERN stack and AI-driven collaborative filtering for 500+ students.",
-    "Improved DSA mastery via adaptive learning paths, achieving faster concept comprehension rate.",
-    "Developed AI-powered graph-based visualization module with K-means clustering for enhanced user engagement.",
-    "Integrated NLP for content analysis, enhancing topic relationships and optimizing learning path recommendations."
-  ]},
-
-    {
-      "role": "Data Science Intern",
-      "company": "Celebal Technologies",
-      "period": "May 2025 - July 2025",
+      "role": "SDE Intern",
+      "company": "getORGOS",
+      "period": "Feb 2026 — Present",
       "highlights": [
-        "Conducted in-depth Exploratory Data Analysis (EDA) using Pandas, Seaborn, and Matplotlib.",
-        "Created a full classification pipeline by training and evaluating machine learning models.",
-        "Optimized the best model (KNN at 98.2 accuracy) by implementing RandomizedSearchCV"
+        "Built a streaming RAG natural language to SQL pipeline using FastAPI and SSE with a 7-stage agentic architecture serving multi-tenant organizations in real time.",
+        "Cut SQL hallucinations by 60% by designing a scoped dictionary system that narrows 20+ tables to the relevant subset before prompting the LLM.",
+        "Designed a deterministic keyword router covering 20+ HR domains, acting as a lightweight agent that bypasses LLM calls for 80% of common queries, saving 0.3-0.5 seconds per request.",
+        "Implemented 8 Redis cache layers across SQL results, intent, table selection, entity maps, and permissions, achieving near-zero latency on repeated queries.",
+        "Built a batch entity resolver with 24-hour TTL caching that performs information extraction, translating UUIDs across 12+ fields into human-readable names with zero extra database calls.",
+        "Created a 40+ rule canned query engine with pattern scoring and LLM-backed semantic validation, delivering sub-second answers for frequent questions.",
+        "Engineered a SQL validation framework with 10+ security checks including injection blocking, restricted column enforcement, and parameter verification.",
+        "Implemented 3-tier RBAC with module-level table gating, row-level employee scope enforcement, and admin-only query locking ensuring strict multi-tenant data isolation.",
+        "Added cross-org attack detection, context-aware multi-turn agentic query rewriting, CSV export, and follow-up suggestion generation to improve conversational UX.",
+        "Integrated 3 LLM providers (OpenAI, Claude) through an abstracted client layer with temperature-tuned lightweight models for classification and full models for SQL generation."
       ]
     },
     {
-      "role": "Cyber Security Trainee",
-      "company": "C-DAC",
-      "period": "Nov 2024 - Dec 2024",
+      "role": "Winter Intern",
+      "company": "IIT Ropar — DLED Labs",
+      "period": "Dec 2025 — Jan 2026",
       "highlights": [
-        "Ethical Hacking and Penetration Testing Training",
-        "Learned various web vulnerabilities and their prevention techniques",
-        "Gained hands-on experience with tools like Wireshark, Nmap"
+        "Developed a full-stack AI using React, Node.js, MongoDB and OpenAI API with support for multi chat sessions, image generation, and credit-based billing.",
+        "Implemented credit-controlled AI usage, reducing uncontrolled API calls by 50% and enabling Stripe-based monetization.",
+        "Optimized AI image delivery using ImageKit CDN, improving media load performance by 65% across devices.",
+        "Designed a scalable chat architecture with persistent conversations, search, timestamps, and responsive UI using Context API and Tailwind CSS."
+      ]
+    },
+    {
+      "role": "Data Science Intern",
+      "company": "Celebal Technologies",
+      "period": "May 2025 — July 2025",
+      "highlights": [
+        "Performed data preprocessing, feature engineering, and exploratory data analysis using Python (Pandas, NumPy, Matplotlib).",
+        "Built and optimized ML classification models achieving 98.2% accuracy through hyperparameter tuning.",
+        "Developed analytics dashboards using Streamlit enabling non-technical users to explore ESG and business data insights.",
+        "Built a RAG chatbot enabling natural language queries on internal knowledge data for quick information extraction and retrieval."
       ]
     }
   ]
