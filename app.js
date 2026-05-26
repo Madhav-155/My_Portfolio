@@ -585,8 +585,15 @@ class ProjectsManager {
       `<span class="tech-tag">${tech}</span>`
     ).join('');
     
+    const imgHTML = project.thumbnail ? `
+      <div class="project-card__image-wrap">
+        <img src="${project.thumbnail}" alt="${project.title} Preview" class="project-card__image" loading="lazy" width="600" height="400">
+      </div>
+    ` : '';
+    
     const card = createElement(`
       <article class="project-card fade-in" data-project-id="${project.id}" tabindex="0" aria-label="View ${project.title} details">
+        ${imgHTML}
         <div class="project-card__content">
           <h3 class="project-card__title">${project.title}</h3>
           <p class="project-card__description">${project.description}</p>
@@ -594,7 +601,7 @@ class ProjectsManager {
             ${techTags}
           </div>
           <div class="project-card__actions">
-            ${project.liveUrl ? `<a href="${project.liveUrl}" class="project-card__link project-card__link--primary" target="_blank" rel="noopener">
+            ${project.liveUrl ? `<a href="${project.liveUrl.startsWith('http') ? project.liveUrl : 'https://' + project.liveUrl}" class="project-card__link project-card__link--primary" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="m9 18 6-6-6-6"/>
               </svg>
@@ -836,6 +843,7 @@ class BlogManager {
   }
   
   async init() {
+    if (!this.blogGrid) return;
     const postsData = await loadJSON(CONFIG.dataFiles.posts);
     if (postsData && postsData.posts) {
       this.posts = postsData.posts;
@@ -1054,7 +1062,7 @@ class ContactForm {
   }
   
   setupEventListeners() {
-  // Remove custom submit handler for Formspree integration
+    this.form?.addEventListener('submit', (e) => this.handleSubmit(e));
     
     // Real-time validation
     this.inputs?.forEach(input => {
@@ -1081,10 +1089,26 @@ class ContactForm {
     this.setSubmitState(true);
     
     try {
-      // Simulate API call
-      await this.simulateSubmit();
-      this.showStatus('Message sent successfully! I\'ll get back to you soon.', 'success');
-      this.form.reset();
+      const data = new FormData(this.form);
+      const response = await fetch(this.form.action, {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        this.showStatus('Message sent successfully! I\'ll get back to you soon.', 'success');
+        this.form.reset();
+      } else {
+        const responseData = await response.json();
+        if (responseData.errors) {
+          this.showStatus(responseData.errors.map(err => err.message).join(', '), 'error');
+        } else {
+          this.showStatus('Failed to send message. Please try again or contact me directly.', 'error');
+        }
+      }
     } catch (error) {
       this.showStatus('Failed to send message. Please try again or contact me directly.', 'error');
     } finally {

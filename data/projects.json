@@ -4,8 +4,9 @@
       "id": "NxtWatch-platform",
       "title": "NxtWatch Platform",
       "description": "React-based video streaming application that mimics platforms like YouTube",
-      "fullDescription": "Nxt Watch, is a React-based video streaming application that mimics platforms like YouTube. It’s designed to help learners apply key frontend development concepts in a real-world scenario.",
-      "srcset": "./assets/project1-320w.png 320w, ./assets/project1-320w.png 640w, ./assets/project1-320w.png 1024w",
+      "fullDescription": "Nxt Watch is a React-based video streaming application that mimics platforms like YouTube. It’s designed to help learners apply key frontend development concepts in a real-world scenario.",
+      "thumbnail": "./assets/project1-nxtwatch.png",
+      "srcset": "./assets/project1-nxtwatch.png 320w, ./assets/project1-nxtwatch.png 640w, ./assets/project1-nxtwatch.png 1024w",
       "technologies": ["React", "Express", "JWT", "CSS", "HTML"],
       "features": [
         "Uses JWT tokens to validate user credentials.",
@@ -20,12 +21,12 @@
       "date": "2025-09-29"
     },
     {
-     
       "id": "jobby-app",
       "title": "Jobby App",
       "description": "Interactive job search platform with authentication and dynamic filtering",
       "fullDescription": "Jobby App is a responsive job search application built using React.js. It simulates a real-world job portal with secure login authentication, multiple navigable routes, and dynamic job listings fetched from APIs. Users can filter jobs by employment type, salary range, and keyword search. The app includes detailed job views, failure handling for API errors, and a custom 404 page. It’s a comprehensive frontend project that demonstrates routing, protected views, and stateful UI components.",
-      "srcset": "./assets/jobbyapp-320w.jpg 320w, ./assets/jobbyapp-640w.jpg 640w, ./assets/jobbyapp-1024w.jpg 1024w",
+      "thumbnail": "./assets/project2-jobby.png",
+      "srcset": "./assets/project2-jobby.png 320w, ./assets/project2-jobby.png 640w, ./assets/project2-jobby.png 1024w",
       "technologies": ["React.js", "JWT", "REST API", "CSS3", "React Router"],
       "features": [
         "Secure login authentication with JWT",
@@ -42,54 +43,54 @@
       "date": "2025-09-20"
     },
     {
-     
-    "id": "twitter-clone-app",
-    "title": "Twitter Clone App",
-    "description": "Backend-focused social media API with authentication and tweet operations",
-    "fullDescription": "Twitter Clone is a backend application built using Node.js and Express, designed to replicate core functionalities of Twitter. It uses a SQLite database with five interconnected tables: user, follower, tweet, reply, and like. The app supports user registration and login with JWT authentication, and includes protected routes for viewing feeds, followers, tweet details, likes, replies, and tweet creation or deletion. It demonstrates robust API design, middleware for token verification, and secure access control.",
-    "srcset": "./assets/twitterclone-320w.jpg 320w, ./assets/twitterclone-640w.jpg 640w, ./assets/twitterclone-1024w.jpg 1024w",
-    "technologies": ["Node.js", "Express", "SQLite", "JWT", "REST API"],
-    "features": [
-      "User registration and login with JWT authentication",
-      "Protected routes with middleware for token verification",
-      "Tweet feed showing latest posts from followed users",
-      "View followers and following lists",
-      "Detailed tweet view with likes and replies",
-      "Create and delete tweets securely",
-      "Access control for viewing and modifying tweets",
-      "Structured database with normalized relationships"
-    ],
-
+      "id": "twitter-clone-app",
+      "title": "Twitter Clone App",
+      "description": "Backend-focused social media API with authentication and tweet operations",
+      "fullDescription": "Twitter Clone is a backend application built using Node.js and Express, designed to replicate core functionalities of Twitter. It uses a SQLite database with five interconnected tables: user, follower, tweet, reply, and like. The app supports user registration and login with JWT authentication, and includes protected routes for viewing feeds, followers, tweet details, likes, replies, and tweet creation or deletion. It demonstrates robust API design, middleware for token verification, and secure access control.",
+      "thumbnail": "./assets/project3-twitter.png",
+      "srcset": "./assets/project3-twitter.png 320w, ./assets/project3-twitter.png 640w, ./assets/project3-twitter.png 1024w",
+      "technologies": ["Node.js", "Express", "SQLite", "JWT", "REST API"],
+      "features": [
+        "User registration and login with JWT authentication",
+        "Protected routes with middleware for token verification",
+        "Tweet feed showing latest posts from followed users",
+        "View followers and following lists",
+        "Detailed tweet view with likes and replies",
+        "Create and delete tweets securely",
+        "Access control for viewing and modifying tweets",
+        "Structured database with normalized relationships"
+      ],
       "liveUrl": "https://weather-dashboard-demo.example.com",
       "repoUrl": "https://github.com/Madhav-155/Twitter-Clone-API",
       "date": "2025-08-20"
     },
     {
-"id": "Nxt-Trends",
- "title": "Nxt Trends",
-  "description": "An e-commerce platform similar to Amazon and Flipkart.",
-  "fullDescription": "Nxt Trendz is a comprehensive e-commerce solution built with React. It features user authentication, product listings, a shopping cart, and a responsive user interface. This project was developed as a part of the Nxt Wave curriculum to demonstrate proficiency in modern front-end technologies.",
-  "srcset": "./assets/project1-320w.png 320w, ./assets/project1-320w.png 640w, ./assets/project1-320w.png 1024w",
-  "technologies": ["React", "JS", "CSS", "HTML", "react-router-dom", "js-cookie"],
-  "features": [
-  "User authentication with login and registration.",
- "Product browsing with sorting and filtering options.",
-  "Shopping cart functionality to add, remove, and manage items.",
-         "Responsive design for seamless user experience across devices.",
-          "Secure routing to protect application pages.",
-          "Persists user login state using browser cookies."
- ],
- "liveUrl": "madhavnxttrends.ccbp.tech",
-  "repoUrl": "https://github.com/Madhav-155/Nxt-Trends",
-  "date": "2025-10-12"
-  },   
-    
+      "id": "Nxt-Trends",
+      "title": "Nxt Trends",
+      "description": "An e-commerce platform similar to Amazon and Flipkart.",
+      "fullDescription": "Nxt Trendz is a comprehensive e-commerce solution built with React. It features user authentication, product listings, a shopping cart, and a responsive user interface. This project was developed as a part of the Nxt Wave curriculum to demonstrate proficiency in modern front-end technologies.",
+      "thumbnail": "./assets/project4-trends.png",
+      "srcset": "./assets/project4-trends.png 320w, ./assets/project4-trends.png 640w, ./assets/project4-trends.png 1024w",
+      "technologies": ["React", "JS", "CSS", "HTML", "react-router-dom", "js-cookie"],
+      "features": [
+        "User authentication with login and registration.",
+        "Product browsing with sorting and filtering options.",
+        "Shopping cart functionality to add, remove, and manage items.",
+        "Responsive design for seamless user experience across devices.",
+        "Secure routing to protect application pages.",
+        "Persists user login state using browser cookies."
+      ],
+      "liveUrl": "madhavnxttrends.ccbp.tech",
+      "repoUrl": "https://github.com/Madhav-155/Nxt-Trends",
+      "date": "2025-10-12"
+    },
     {
       "id": "weather-dashboard",
       "title": "Weather Dashboard",
       "description": "Interactive weather dashboard with location-based forecasts and data visualization",
       "fullDescription": "An intuitive weather dashboard that provides comprehensive weather information with beautiful data visualizations. Features include location-based weather data, 7-day forecasts, interactive charts, weather maps, and the ability to save favorite locations for quick access.",
-      "srcset": "./assets/project3-320w.jpg 320w, ./assets/project3-640w.jpg 640w, ./assets/project3-1024w.jpg 1024w",
+      "thumbnail": "./assets/project5-weather.png",
+      "srcset": "./assets/project5-weather.png 320w, ./assets/project5-weather.png 640w, ./assets/project5-weather.png 1024w",
       "technologies": ["JavaScript", "Chart.js", "OpenWeather API", "CSS Grid", "Local Storage"],
       "features": [
         "Current weather conditions",
